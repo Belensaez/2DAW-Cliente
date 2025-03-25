@@ -1,7 +1,7 @@
 # 📱 **Proyectos de Cliente - Segundo de DAW**
 
 ## 🌐 Enlaces importantes
-- [Proyecto evaluación JavaScript](https://belen.com.es/JAVASCRIPT/proyectoEvaluacion/proyecto.html)
+- [Proyecto Final Evaluación JavaScript](https://belen.com.es/JAVASCRIPT/proyectoEvaluacion/proyecto.html)
 
 ## 🌟 Descripción
 
