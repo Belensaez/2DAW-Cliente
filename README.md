@@ -1,8 +1,8 @@
 # 📱 **Proyectos de Cliente - Segundo de DAW**
 
 ## 🌐 Enlaces importantes
-- [Repositorio en GitHub](https://github.com/tu-usuario/tu-repositorio)
-- [Documentación del proyecto](https://link-a-documentacion.com)
+- [Proyecto evaluación JavaScript](https://belen.com.es/JAVASCRIPT/proyectoEvaluacion/proyecto.html)
+
 
 ## 🌟 Descripción
 
@@ -27,7 +27,7 @@ Este repositorio contiene los proyectos realizados en el módulo de **Desarrollo
 - **Git**  
 - **Node.js** (para gestión de paquetes con npm)  
 - **Angular CLI** (para el desarrollo y administración de proyectos Angular)  
-- **Webpack** (para modularización y optimización del código)  
+
 
 ---
 
