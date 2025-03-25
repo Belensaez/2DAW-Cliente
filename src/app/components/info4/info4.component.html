@@ -1,0 +1,21 @@
+
+
+<div class="content" *ngIf="dataApi">
+
+    <div class="three-cols">
+        <div class="card"  *ngFor="let char of characters">
+            <div class="card-header"  >
+                <h3>{{char.name}}</h3>
+            </div>
+
+            <img [src]="char.assets.image" [title]="char.name">
+
+            <div class="card-body">
+                <p><b>Attack:</b> {{char.damageType}}</p>
+                <p *ngIf="char.elements.length>0"><b>Elements:</b> <span *ngFor="let element of char.elements">Type: {{element.type}}<br>Damage: {{element.damage}}</span></p>
+                <p><b>Rarity: </b>{{char.rarity}} </p>
+               
+            </div>
+        </div>
+    </div>
+</div>

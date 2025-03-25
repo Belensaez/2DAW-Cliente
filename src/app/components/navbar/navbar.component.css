@@ -1,0 +1,50 @@
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #212121; /* Fondo oscuro para un estilo más gamer */
+    padding: 10px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+}
+
+/* Logo con estilo futurista */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00eaff; /* Azul brillante */
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+    text-transform: uppercase;
+}
+
+/* Enlaces del menú */
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilo de los enlaces */
+.nav-link {
+    padding: 8px 12px;
+    color: #bbb; /* Gris suave para enlaces */
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+.nav-link:hover {
+    color: #4f46e5; /* Morado brillante */
+    transform: scale(1.1); /* Efecto sutil de aumento */
+}
+
+/* Enlace activo */
+.active {
+    font-weight: bold;
+    color: #ff007d; /* Rojo brillante para el activo */
+}

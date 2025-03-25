@@ -1,0 +1,23 @@
+
+
+<div class="content" *ngIf="dataApi">
+
+    <div class="three-cols">
+        <div class="card"  *ngFor="let char of characters">
+            <div class="card-header"  >
+                <h3>{{char.developerName}}</h3>
+            </div>
+
+            <img [src]="char.displayIconSmall" [title]="char.developerName">
+
+            <div class="card-body">
+                <p *ngIf="char.role"><b>Role:</b> {{char.role?.displayName}}</p>
+                <p><b>Abilities:</b> <span *ngFor="let ability of char.abilities">
+                    {{ability.displayName}},
+                </span></p>
+               
+               
+            </div>
+        </div>
+    </div>
+</div>

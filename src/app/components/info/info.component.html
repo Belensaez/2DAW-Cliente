@@ -1,0 +1,21 @@
+
+
+<div class="content" *ngIf="dataApi">
+ 
+    <div class="three-cols">
+        <div class="card"  *ngFor="let char of characters">
+            <div class="card-header"  >
+                <h3>{{char.name}}</h3>
+            </div>
+
+            <img [src]="char.image" [title]="char.name">
+
+            <div class="card-body">
+                <p><b>Gender:</b> {{char.gender}}</p>
+                <p><b>Species:</b> {{char.species}}</p>
+                <p><b>Status:</b> {{char.status}}</p>
+                <p><b>Origin:</b> {{char.origin.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
