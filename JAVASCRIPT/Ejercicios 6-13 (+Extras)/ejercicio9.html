@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number1 = prompt("Enter a number");
+      let number2 = prompt("Enter an another number");
+      let i = 1;
+      while (i != 0) {
+        if (number1 == -1 || number2 == -1 ) {
+          alert("ERROR:Negative number");
+          i = 0;
+        }
+        if (isNaN(number1)||number1<0) {
+          number1 = prompt("Enter a correct number ");
+        }
+
+        if (isNaN(number2)||number2<0) {
+          number2 = prompt("Enter a correct number");
+        }
+        if (
+          !isNaN(number1) &&
+          !isNaN(number2) &&
+          number1 !=-1 &&
+          number2 !=-1 &&
+          number1 >=0 &&
+          number2 >=0
+
+        ) {
+          var suma = parseInt(number1) + parseInt(number2);
+          alert(number1 + " + " + number2 + " = " + suma);
+          i = 0;
+        } 
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function startSWithE(item) {
+      
+        return item[0].toUpperCase()=="E";
+      }
+      const countries = [
+        "Estonia",
+        "Finland",
+        "Sweden",
+        "Denmark",
+        "Norway",
+        "Iceland",
+      ];
+      let newArray = countries.filter(item => item[0].toUpperCase()=="E");
+      document.write(newArray);
+
+
+    </script>
+</body>
+</html>

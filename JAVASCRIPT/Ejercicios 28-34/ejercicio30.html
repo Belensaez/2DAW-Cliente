@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const mapa = new Map([
+        ["Jose", "Teacher"],
+        ["Lorenzo", "Teacher"],
+        ["Nuria", "Student"],
+        ["Vicente", "Student"],
+        ["Joaquin", "Student"],
+        ["Maria", "Student"],
+      ]);
+        var name=prompt("Enter a name","Jose");
+        if(mapa.has(name)){
+            console.log(mapa.get(name));
+        }else{
+            document.write(name+" doesn't exist in this data collection");
+        }
+    </script>
+  </body>
+</html>

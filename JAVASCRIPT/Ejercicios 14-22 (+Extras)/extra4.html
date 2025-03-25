@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function daysUntilSanJose() {
+        var today = new Date();
+        var nextSanJose = new Date(today.getFullYear(), 2, 19);
+
+        if (today > nextSanJose) {
+          nextSanJose.setFullYear(nextSanJose.getFullYear() + 1);
+        }
+
+        var millisecondsUntilSanJose = nextSanJose - today;
+
+        var daysUntilSanJose = millisecondsUntilSanJose / (1000 * 60 * 60 * 24);
+
+        return daysUntilSanJose;
+      }
+
+      var daysLeft = daysUntilSanJose();
+      document.write("Days until next San Jose festivity:", daysLeft);
+    </script>
+  </body>
+</html>

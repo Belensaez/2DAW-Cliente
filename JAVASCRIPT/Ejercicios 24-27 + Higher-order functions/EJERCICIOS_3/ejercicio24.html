@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isGreaterThanNumber(item) {
+        return item>lastAge;
+      }
+      alert("Enter five ages");
+      var ages=[];
+      for(let i=0;i<5;i++){
+        ages[i]=prompt("Age "+(i+1)+" : ");
+      }
+      var lastAge=prompt("Enter one more age:")
+      
+     let array = ages.filter(isGreaterThanNumber);
+      if (array != 0) {
+      document.write(
+     "Numbers greater than "+lastAge+" = " + array);
+      } else {
+        document.write("No age gretaher than "+lastAge);
+      };
+   
+      
+      
+    </script>
+  </body>
+</html>

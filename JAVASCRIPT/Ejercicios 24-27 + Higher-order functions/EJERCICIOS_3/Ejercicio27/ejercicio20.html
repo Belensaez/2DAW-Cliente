@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [2, 3];
+      let number = 2;
+
+      const greaterThanAverage = (number, ...args) => {
+        let suma = 0;
+        for (let i = 0; i < args.length; i++) {
+          suma += args[i];
+        }
+        const average = suma / args.length;
+        return average < number;
+      };
+      console.log(
+        "Is " + number + " greater than average " + greaterThanAverage(2, array)
+      );
+    </script>
+  </body>
+</html>

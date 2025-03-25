@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const vinylCollection = [
+        {
+          id: 1,
+          albumTitle: "Abbey Road",
+          artist: "The Beatles",
+          trackList: [
+            "Come Together",
+            "Something",
+            "Maxwell's Silver Hammer",
+            "Oh! Darling",
+          ],
+        },
+        {
+          id: 2,
+          albumTitle: "Born to Run",
+          artist: "Bruce Springsteen",
+          trackList: ["Thunder Road", "Tenth Avenue Freeze-Out"],
+        },
+        {
+          id: 3,
+          albumTitle: "The Dark Side of the Moon",
+          artist: "Pink Floyd",
+          trackList: ["Speak to Me", "Brain Damage", "Eclipse"],
+        },
+        {
+          id: 4,
+          albumTitle: "Thriller",
+          artist: "Michael Jackson",
+          trackList: [
+            "Wanna Be Startin' Somethin'",
+            "The Girl Is Mine",
+            "Thriller",
+          ],
+        },
+      ];
+      var vinylId = parseInt(prompt("Enter the vinyl ID:"));
+
+      var vinyl = vinylCollection.find((vinyl) => vinyl.id === vinylId);
+
+      if (vinyl) {
+        document.write(`<h1>${vinyl.albumTitle}</h1>`);
+        document.write(`<h2>${vinyl.artist}</h2>`);
+        document.write("<ul>");
+        vinyl.trackList.forEach((track) => {
+          document.write(`<li>${track}</li>`);
+        });
+        document.write("</ul>");
+      } else {
+        document.write(`<h2>Vinyl with ID ${vinylId} not found.</h2>`);
+      }
+    </script>
+  </body>
+</html>

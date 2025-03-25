@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string="Ojo rojo";
+
+        
+        document.write(string+" is a palindrome? "+isPalindrome(string));
+
+
+
+        function isPalindrome(string){
+            let arrayLetters=string.split(" ");//hace un array de cada palabra
+            console.log(arrayLetters);
+            
+            let stringReverse=arrayLetters.join("").split().reverse().join("");//primero junta el array en una frase,luego los separa leta a letra ,revierte el array de letras y luego lo junta sin espacios
+            console.log(stringReverse.toLowerCase());
+            
+            if(arrayLetters.join("").toLowerCase()===stringReverse.toLowerCase()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myHome = {
+        address: "123 Main Street, Valencia, Spain",
+        rooms: 3,
+        squareMeters: 120,
+        extras: ["balcony", "garage", "garden"],
+      };
+      console.log("Address:", myHome.address);
+      console.log("Rooms:", myHome.rooms);
+      console.log("Square Meters:", myHome.squareMeters);
+      console.log("Extras:", myHome.extras);
+
+      myHome.elevator = true;
+      delete myHome.squareMeters;
+
+      console.log(
+        "Does 'elevator' property exist?" + myHome.hasOwnProperty("elevator")
+      );
+      console.log(
+        "Does 'squaremeter' property exist?" +
+          myHome.hasOwnProperty("squareMeters")
+      );
+      console.log(
+        "Does 'rooms' property exist?" + myHome.hasOwnProperty("rooms")
+      );
+    </script>
+  </body>
+</html>

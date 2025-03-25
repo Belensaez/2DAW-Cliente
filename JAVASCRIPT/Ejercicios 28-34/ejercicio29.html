@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 29</title>
+    <script>
+      window.onload = function () {
+        let arr = [],
+          set = new Set();
+        let users = [
+          20000,
+          2,
+          1,
+          4000,
+          45342,
+          12,
+          1000000,
+          43,
+          2000000,
+          32,
+        ];
+
+        for (let i = 0; i < users.length; i++) {
+          arr.push(users[i]);
+          set.add(users[i]);
+        }
+
+        let result;
+        console.log("1");
+        console.time("Array");
+        result = arr.indexOf(1) !== -1;
+        console.timeEnd("Array");
+
+        console.time("Set");
+        result = set.has("1");
+        console.timeEnd("Set");
+
+        console.log(2000000);
+
+        console.time("Array2");
+        result = arr.indexOf(2000000) !== -1;
+        console.timeEnd("Array2");
+
+        console.time("Set2");
+        result = set.has(2000000);
+        console.timeEnd("Set2");
+
+        console.log(1000000);
+        console.time("Array3");
+        result = arr.indexOf(1000000) !== -1;
+        console.timeEnd("Array3");
+
+        console.time("Set3");
+        result = set.has(1000000);
+        console.timeEnd("Set3");
+      };
+      //The set takes less time because it directly accesses the elementss
+    </script>
+  </head>
+
+  <body></body>
+</html>

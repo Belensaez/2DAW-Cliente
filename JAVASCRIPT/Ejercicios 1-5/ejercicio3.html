@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var aleatorio = Math.floor(Math.random()*10)+1;
+        let pregunta=prompt("Take a random integer between 1 and 10.")
+        if(pregunta==aleatorio){
+            alert("Well done!");
+        }else{
+            alert("Sorry, wrong guess,the correct number is "+aleatorio);
+        }
+    </script>
+</body>
+</html>

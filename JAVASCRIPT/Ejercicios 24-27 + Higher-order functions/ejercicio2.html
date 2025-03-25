@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let index = 0;
+      const countries = [
+        "Estonia",
+        "Finland",
+        "Sweden",
+        "Denmark",
+        "Norway",
+        "Iceland",
+      ];
+      const concatenate = countries.reduce((accumulator, currVal) => {
+        index++;
+        if (index == countries.length - 1) {
+          return accumulator + " and " + currVal;
+        } else {
+          return accumulator + "," + currVal;
+        }
+      });
+      console.log(concatenate + " are north European countries’");
+    </script>
+  </body>
+</html>

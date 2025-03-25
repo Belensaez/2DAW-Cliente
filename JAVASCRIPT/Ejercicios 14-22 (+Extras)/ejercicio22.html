@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dataArray = [2, 2];
+      let a = 1;
+      let b = 5;
+      let c = 3;
+      let array = quadraticSolver(a, b, c);
+      document.write(
+        "x = ( -" +
+          b +
+          " ± sqrt(" +
+          b +
+          "*2 - 4*" +
+          a +
+          "*" +
+          c +
+          ") )/2*" +
+          a +
+          " = <br>" +
+          array
+      );
+
+      function quadraticSolver(a, b, c) {
+        let sol = [];
+        part1 = b * b - 4 * a * c;
+        if (part1 < 0) {
+          alert("Without REAL solution");
+        } else {
+          sol[0] = (-b + Math.sqrt(part1)) / (2 * a);
+          sol[1] = (-b - Math.sqrt(part1)) / (2 * a);
+          return sol;
+        }
+      }
+    </script>
+  </body>
+</html>

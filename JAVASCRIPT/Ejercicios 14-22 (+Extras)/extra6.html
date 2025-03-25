@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      multiples = [3, 5];
+      maximun = 1000;
+      alert(
+        "Add the common multiples of 3 and 5 less than 1000: " +
+          calculateMultiples(maximun, ...multiples)
+      );
+
+      function calculateMultiples(maximun, ...multiples) {
+        sum = 0;
+        for (let i = 0; i < maximun; i++) {
+          if (i % multiples[0] == 0 && i % multiples[1] == 0) {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+    </script>
+  </body>
+</html>

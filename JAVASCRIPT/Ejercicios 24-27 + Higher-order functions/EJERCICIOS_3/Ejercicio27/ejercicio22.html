@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dataArray = [2, 2];
+      let a = 1;
+      let b = 5;
+      let c = 3;
+
+      var quadraticSolver = (a, b, c) => {
+        var discriminant = b * b - 4 * a * c;
+
+        if (discriminant < 0) {
+          alert("Without REAL solution");
+          return [];
+        }
+
+        var root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        var root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+        return [root1, root2];
+      };
+      let array = quadraticSolver(a, b, c);
+      document.write(array);
+    </script>
+  </body>
+</html>

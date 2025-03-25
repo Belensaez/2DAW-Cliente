@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      function createText(item, index) {
+        text += index + ": " + item + "<br>";
+      }
+      let text = "";
+      const countries = [
+        "Estonia",
+        "Finland",
+        "Sweden",
+        "Denmark",
+        "Norway",
+        "Iceland",
+      ];
+      countries.forEach(createText);
+      document.write(text);
+    </script>
+  </body>
+</html>

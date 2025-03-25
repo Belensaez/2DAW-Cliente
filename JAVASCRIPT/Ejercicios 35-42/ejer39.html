@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload=function(){
+      var images=["fotos/cara1.jpg","fotos/cara3.jpg","fotos/descarga.jpeg","fotos/holi.png"];
+    var index=Math.floor(Math.random()* images.length);///pREGUNRAR
+    var randomImage=images[index];
+     var image=document.getElementsByTagName("img")[0];
+     image.src=randomImage;
+     console.log(image);
+    
+    }
+  
+
+      
+    
+
+  
+  </script>
+  <body>
+    <ul>
+        <li><img src="#" style="height: 50px;"></li>
+        
+    </ul>
+    
+  </body>
+</html>

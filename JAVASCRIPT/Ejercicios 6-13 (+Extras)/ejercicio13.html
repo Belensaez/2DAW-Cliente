@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let client=null;
+        let money=prompt("How much money do you spend?");
+        if(money<=25){
+            client="Standard";
+        }else if(money>25 && money<=50){
+            client="Bronze";
+        }else if(money>50 && money<=100){
+            client="Silver";
+        }else if(money>=100){
+            client="Gold";
+        }else{
+            alert("Incorrect number");
+        }
+        if(client!=null){
+            alert("You are a client "+client);
+
+        }
+
+
+
+    </script>
+</body>
+</html>

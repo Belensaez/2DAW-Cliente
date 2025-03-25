@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dataArray = [2, 2];
+      let number = 1;
+      var linearSearch = (number, ...args) => {
+        for (let i = 0; i < args.length; i++) {
+          if (args[i] === number) {
+            return true;
+          }
+        }
+        return false;
+      };
+      document.write(
+        "Is " +
+          number +
+          " include in the array? " +
+          linearSearch(number, ...dataArray)
+      );
+    </script>
+  </body>
+</html>

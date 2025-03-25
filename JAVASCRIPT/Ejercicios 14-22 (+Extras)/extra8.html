@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [2, 4, 2, 5, 7, 7, 5];
+      document.write("First Array : " + array + "<br>");
+      document.write(
+        "Array without duplicate numbers : " + removeDuplicates(...array)
+      );
+
+      function removeDuplicates(...array) {
+        let uniqueArray = [];
+        for (let element of array) {
+          if (uniqueArray.indexOf(element) === -1) {
+            uniqueArray.push(element);
+          }
+        }
+        return uniqueArray;
+      }
+    </script>
+  </body>
+</html>
