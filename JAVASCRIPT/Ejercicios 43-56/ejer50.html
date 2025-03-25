@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    img {
+        width: 100px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <img src="fruta.png">
+</body>
+<script>
+    var cont = 0;
+    document.addEventListener('DOMContentLoaded', () => {
+        var h1 = document.createElement("h1");
+        h1.innerText = "Welcome user!";
+        var body = document.querySelector("body");
+        body.insertBefore(h1, body.firstChild);
+    });
+    var image = document.querySelector("img");
+    image.onmouseover = function() {
+        image.src = "helados.jpeg";
+    };
+    image.onmouseout = function() {
+        image.src = "fruta.png"
+
+    };
+    image.onclick = function() {
+        cont++;
+        if (cont == 1) {
+            alert("What are you doing?");
+        }
+        if (cont == 5) {
+            alert("Stop clicking me!");
+
+
+        }
+    }
+</script>
+
+</html>

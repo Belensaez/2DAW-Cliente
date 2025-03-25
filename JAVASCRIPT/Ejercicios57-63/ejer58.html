@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var body = document.querySelector("body");
+
+      var label = document.createElement("label");
+      label.innerText = "Usuario: ";
+      body.appendChild(label);
+
+      var label4 = document.createElement("label");
+
+      var input = document.createElement("input");
+      input.type = "text";
+      input.name = "user";
+      body.appendChild(input);
+
+      var br = document.createElement("br");
+      body.appendChild(br);
+      var br2 = document.createElement("br");
+      body.appendChild(br2);
+
+      var label2 = document.createElement("label");
+      label2.innerText = "Hobbies: ";
+      body.appendChild(label2);
+
+      var br = document.createElement("br");
+      body.appendChild(br);
+
+      var checkbox1 = document.createElement("input");
+      checkbox1.type = "checkbox";
+      checkbox1.name = "hobbies";
+      checkbox1.value = "read";
+      body.appendChild(checkbox1);
+
+      var label3 = document.createElement("label");
+      label3.innerText = "Read";
+      body.appendChild(label3);
+
+      var checkbox2 = document.createElement("input");
+      checkbox2.type = "checkbox";
+      checkbox2.name = "hobbies";
+      checkbox2.value = "videogames";
+      body.appendChild(checkbox2);
+
+      var label3 = document.createElement("label");
+      label3.innerText = "Videogames";
+      body.appendChild(label3);
+
+      var br = document.createElement("br");
+      body.appendChild(br);
+      var br2 = document.createElement("br");
+      body.appendChild(br2);
+
+      var label = document.createElement("label");
+      label.innerText = "Gender:";
+      body.appendChild(label);
+
+      var br = document.createElement("br");
+      body.appendChild(br);
+
+      var radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "gender";
+      radio.value = "women";
+      body.appendChild(radio);
+
+      var label = document.createElement("label");
+      label.innerText = "Women";
+      body.appendChild(label);
+
+      var radio2 = document.createElement("input");
+      radio2.type = "radio";
+      radio2.name = "gender";
+      radio2.value = "men";
+      body.appendChild(radio2);
+
+      var label = document.createElement("label");
+      label.innerText = "Men";
+      body.appendChild(label);
+
+      var br = document.createElement("br");
+      body.appendChild(br);
+      var br2 = document.createElement("br");
+      body.appendChild(br2);
+
+      var button = document.createElement("input");
+      button.type = "button";
+      button.name = "button";
+      button.value = "send";
+      body.appendChild(button);
+    };
+  </script>
+  <body></body>
+</html>

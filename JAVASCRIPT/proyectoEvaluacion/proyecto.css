@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.laptop-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+}
+.laptop-card h3 {
+    margin: 0 0 10px;
+}
+.form-container {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    display:none;
+}
+.form-container label {
+    display: block;
+    margin: 5px 0 2px;
+}
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.form-container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+#add-laptop-form {
+    display: none;
+}
+.remove-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.remove-btn:hover {
+    background-color: #cc0000;
+}
+.edit-btn {
+    background-color: #26f949;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+.edit-btn:hover {
+    background-color: #1bb334;
+}
+.alert {
+    color: red;
+    font-size: 14px;
+}

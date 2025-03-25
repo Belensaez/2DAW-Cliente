@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Control Example</title>
+    <script>
+      window.onload = function () {
+        const books = [
+          {
+            title: "To Kill a Mockingbird",
+            author: "Harper Lee",
+            alreadyRead: true,
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            alreadyRead: false,
+          },
+          {
+            title: "Pride and Prejudice",
+            author: "Jane Austen",
+            alreadyRead: true,
+          },
+          {
+            title: "The Great Gatsby",
+            author: "F. Scott Fitzgerald",
+            alreadyRead: false,
+          },
+          {
+            title: "Moby Dick",
+            author: "Herman Melville",
+            alreadyRead: true,
+          },
+          {
+            title: "The Catcher in the Rye",
+            author: "J.D. Salinger",
+            alreadyRead: false,
+          },
+        ];
+        var body = document.querySelector("body");
+        books.forEach((book) => {
+          let p = document.createElement("p");
+          if (book.alreadyRead) {
+            p.innerText =
+              "You already read " + book.title + " by " + book.author;
+            body.appendChild(p);
+          } else {
+            p.innerText =
+              "You still need to read " + book.title + " by " + book.author;
+            body.appendChild(p);
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>My book List</h1>
+  </body>
+</html>

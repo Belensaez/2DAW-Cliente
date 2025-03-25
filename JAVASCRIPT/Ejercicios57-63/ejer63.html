@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .quiz-container {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+      }
+      .question {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      .answers button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .answers button.selected {
+        background-color: #d1e7dd;
+      }
+      .message {
+        margin-top: 20px;
+        font-size: 1.2em;
+      }
+      .score {
+        margin-top: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container">
+      <div class="question">Question will appear here</div>
+      <div class="answers">
+        <button data-index="0">Answer 1</button>
+        <button data-index="1">Answer 2</button>
+        <button data-index="2">Answer 3</button>
+        <button data-index="3">Answer 4</button>
+      </div>
+      <button id="submit">Submit</button>
+      <div class="message"></div>
+      <div class="score">Score: 0</div>
+    </div>
+
+    <script>
+      // Quiz data
+      const questions = [
+        {
+          question: "What is the capital of France?",
+          answers: ["Paris", "London", "Rome", "Berlin"],
+          correct: 0,
+        },
+        {
+          question: "What is 2 + 2?",
+          answers: ["3", "4", "5", "6"],
+          correct: 1,
+        },
+        {
+          question: "Which language is used for web development?",
+          answers: ["Python", "JavaScript", "C++", "Java"],
+          correct: 1,
+        },
+      ];
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+      let selectedAnswer = null;
+
+      const questionElement = document.querySelector(".question");
+      const answerButtons = document.querySelectorAll(".answers button");
+      const submitButton = document.getElementById("submit");
+      const messageElement = document.querySelector(".message");
+      const scoreElement = document.querySelector(".score");
+
+      // Display a question
+      function displayQuestion(index) {
+        const questionData = questions[index];
+        questionElement.textContent = questionData.question;
+        answerButtons.forEach((button, i) => {
+          button.textContent = questionData.answers[i];
+          button.classList.remove("selected");
+        });
+        selectedAnswer = null;
+        messageElement.textContent = "";
+      }
+
+      // Highlight selected answer
+      answerButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          answerButtons.forEach((btn) => btn.classList.remove("selected"));
+          button.classList.add("selected");
+          selectedAnswer = parseInt(button.getAttribute("data-index"));
+        });
+      });
+
+      // Submit answer
+      submitButton.addEventListener("click", () => {
+        if (selectedAnswer === null) {
+          messageElement.textContent = "Please select an answer!";
+          return;
+        }
+        const isCorrect =
+          selectedAnswer === questions[currentQuestionIndex].correct;
+        if (isCorrect) {
+          score++;
+          messageElement.textContent = "Correct!";
+          messageElement.style.color = "green";
+        } else {
+          messageElement.textContent = "Incorrect!";
+          messageElement.style.color = "red";
+        }
+        scoreElement.textContent = `Score: ${score}`;
+        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+        setTimeout(() => displayQuestion(currentQuestionIndex), 2000);
+      });
+
+      // Keyboard shortcuts
+      document.addEventListener("keydown", (event) => {
+        if (event.key >= "1" && event.key <= "4") {
+          const index = parseInt(event.key) - 1;
+          if (index >= 0 && index < answerButtons.length) {
+            answerButtons.forEach((btn) => btn.classList.remove("selected"));
+            answerButtons[index].classList.add("selected");
+            selectedAnswer = index;
+          }
+        }
+        if (event.key === "Enter") {
+          submitButton.click();
+        }
+      });
+
+      // Initialize the quiz
+      displayQuestion(currentQuestionIndex);
+    </script>
+  </body>
+</html>

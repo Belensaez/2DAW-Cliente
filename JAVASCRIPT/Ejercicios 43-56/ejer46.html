@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var p = document.querySelector("p");
+      p.onmousemove = function () {
+        p.style.backgroundColor = "gray";
+      };
+
+      p.onmouseout = function () {
+        p.style.backgroundColor = "green";
+      };
+
+      p.onclick = function () {
+        p.style.backgroundColor = "red";
+      };
+
+      p.ondblclick = function () {
+        p.style.backgroundColor = "blue";
+      };
+    };
+  </script>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque id fugiat
+      dolorem vel. Beatae cupiditate autem ipsa sequi. Dolorem est quia at,
+      maxime quasi veniam illum deleniti voluptates vel laboriosam!
+    </p>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Control Example</title>
+    <script>
+      window.onload = function () {
+        var button1 = document.getElementById("openWindow");
+        var button2 = document.getElementById("resizeWindow");
+        let newWindow;
+        button1.onclick = function () {
+          if (!newWindow || newWindow.closed) {
+            newWindow = window.open(
+              "",
+              "",
+              "width=100,height=100,toolbar=no,menubar=no,location=no"
+            );
+            newWindow.document.body.style.backgroundColor = "red";
+          } else {
+            newWindow.focus();
+          }
+        };
+
+        button2.onclick = function () {
+          if (newWindow && !newWindow.closed) {
+            newWindow.resizeTo(250, 250);
+            newWindow.focus();
+          } else {
+            alert("The window is not open. Please open it first.");
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Control the New Window</h1>
+    <button id="openWindow">Open Small Red Window</button>
+    <button id="resizeWindow">Resize Window to 250x250</button>
+  </body>
+</html>

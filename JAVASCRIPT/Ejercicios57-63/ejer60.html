@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var myText = document.getElementsByName("myText")[0];
+      var warning = document.getElementsByName("warning")[0];
+      console.log(warning);
+
+      warning.style.color = "red";
+      var letters = ["d", "a", "w"];
+      myText.addEventListener("keydown", (event) => {
+        var letter = event.key;
+        if (letters.includes(letter)) {
+          event.preventDefault();
+          warning.innerText =
+            "The letter " + letter + " is not allowed on this page.";
+          warning.style.display = "block";
+        } else {
+          warning.style.display = "none";
+        }
+      });
+    };
+  </script>
+  <body>
+    <form>Input text:<input type="text" name="myText" /></form>
+    <p name="warning"></p>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    font-family: "Arial Narrow";
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 0.5px dashed black;
+    margin: 10px 10px;
+    width: 300px;
+    padding: 0px;
+    float: left;
+    height: 350px;
+  }
+
+
+img{
+    width: 100px;
+}
+
+
+.content {
+    padding: 2px 16px 10px 16px;
+   
+}
+
+h4 {
+    text-align: center;
+    font-size: 20pt;
+    margin: 0px auto;
+    display: block;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.list li {
+    margin: 3px 0px;
+}
+
+.btn {
+    margin: 0 auto ;
+    display: block;
+    padding: 10px;
+    font-family: "Arial narrow";
+    font-size: 20px;
+    color: dodgerblue;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid dodgerblue;
+    width: 40%;
+    transition: background-color 0.3s;
+  }
+  img{
+    width: 140px;
+    margin: 3px 80px;
+  }
+
+  .btn:hover {
+    color: white;
+    background-color: dodgerblue;
+    transition: background-color 0.3s;
+  }

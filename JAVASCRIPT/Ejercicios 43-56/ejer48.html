@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var btns = document.querySelectorAll("button");
+
+      for (let i = 0; i < btns.length; i++) {
+        let btn = btns[i];
+
+        btn.onclick = function () {
+          switch (btn.id) {
+            case "bt1":
+              scrollToImage(0);
+              break;
+            case "bt2":
+              scrollToImage(1);
+
+              break;
+            case "bt3":
+              scrollToImage(2);
+
+              break;
+            case "bt4":
+              shuffleImages();
+              break;
+
+            default:
+              break;
+          }
+        };
+      }
+      function scrollToImage(a) {
+        var images = document.getElementById("images");
+        var imageElements = images.getElementsByTagName("img");
+        for (let i = 0; i < imageElements.length; i++) {
+          if (a == 0) {
+            imageElements[i].src = "image1.jpg";
+            imageElements[i + 1].src = "image2.jpg";
+            imageElements[i + 2].src = "image3.jpg";
+
+            break;
+          } else if (a == 1) {
+            imageElements[i].src = "image2.jpg";
+            imageElements[i + 1].src = "image3.jpg";
+            imageElements[i + 2].src = "image1.jpg";
+            break;
+          } else {
+            imageElements[i].src = "image3.jpg";
+            imageElements[i + 1].src = "image1.jpg";
+            imageElements[i + 2].src = "image2.jpg";
+            break;
+          }
+        }
+      }
+      function shuffleImages() {
+        var images = document.getElementById("images");
+        var imageElements = images.getElementsByTagName("img");
+        for (let i = imageElements.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          images.appendChild(imageElements[j]);
+        }
+      }
+    };
+  </script>
+  <style>
+    div {
+      display: block;
+      margin-bottom: 40px;
+    }
+    button {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 5px;
+      margin-left: 20px;
+      width: 140px;
+      background-color: lightgray;
+      box-shadow: 5px 5px 5px lightgray;
+    }
+    button:hover {
+      background-color: brown;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      margin-left: 50px;
+    }
+  </style>
+  <body>
+    <div>
+      <button type="button" id="bt1">Scroll first image</button>
+      <button type="button" id="bt2">Scroll second image</button>
+      <button type="button" id="bt3">Scroll third image</button>
+      <button type="button" id="bt4">Shuffle images</button>
+    </div>
+    <div id="images">
+      <img src="image1.jpg" />
+      <img src="image2.jpg" />
+      <img src="image3.jpg" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var myForm = document.forms[0];
+      var send = myForm.send;
+      var body = document.querySelector("body");
+
+      var p = document.createElement("p");
+
+      send.onclick = function () {
+        var user = myForm.name.value;
+        var password = myForm.password.value;
+        var interests = myForm.interests;
+        var valueInterest = [];
+        for (let interest of interests) {
+          if (interest.checked) {
+            valueInterest.push(interest.value);
+          }
+
+          console.log(valueInterest);
+        }
+        var gender = myForm.gender.value;
+        var country = myForm.country.value;
+        var comments = myForm.comments.value;
+        p.textContent =
+          "User: " +
+          user +
+          "\nPassword: " +
+          password +
+          "\nInterests: " +
+          valueInterest +
+          "\nGender: " +
+          gender +
+          "\nCountry: " +
+          country +
+          "\nComments: " +
+          comments;
+        body.appendChild(p);
+      };
+    };
+  </script>
+  <body>
+    <h2>User Information Form</h2>
+    <form name="miform">
+      Name: <input type="text" name="name" id="name" /><br /><br />
+      Password: <input type="password" name="password" /> <br /><br />
+      Age: <input type="number" name="age" /><br /><br />
+      <h5>Interests</h5>
+      <input type="checkbox" value="sports" name="interests" /> Sports
+      <input type="checkbox" value="music" name="interests" /> Music
+      <input type="checkbox" value="movies" name="interests" />Movies
+      <h5>Gender</h5>
+      <input type="radio" value="women" name="gender" /> Women
+      <input type="radio" value="men" name="gender" /> Men
+      <input type="radio" value="other" name="gender" />Other<br /><br />
+      Country:<select name="country">
+        <option value="spain">Spain</option>
+        <option value="france">France</option>
+        <option value="italy">Italy</option></select
+      ><br /><br />
+      Comments: <input type="textarea" name="comments" /><br /><br />
+      <input type="button" name="send" value="Send" />
+    </form>
+  </body>
+</html>
