@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number=prompt("Enter a number");
+        isEven(number);
+
+        function isEven(number){
+            let arrayNumber=number.split("");//al quitar las comillas no se hace array
+            let num1=false;
+            
+            for(let i=0;i<arrayNumber.length;i++){
+               
+                if(arrayNumber[i]%2==0){
+                    if(arrayNumber[i-1]%2==0){
+                        document.write("-"+arrayNumber[i]);
+                    }else{
+                    document.write(arrayNumber[i]);
+
+                }
+              
+            }else{
+                document.write(arrayNumber[i]);
+            }
+        }
+            }
+ 
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isFailed(item) {
+        return item < 5;
+      }
+      alert("Enter five grades");
+      var grades = [];
+      for (let i = 0; i < 5; i++) {
+        grades[i] = prompt("Grade " + (i + 1) + " : ");
+      }
+
+      let gradeFailed = grades.some(isFailed);
+      if (gradeFailed) {
+        document.write("There is at least one failed grade");
+      } else {
+        document.write("No grade failed");
+      }
+    </script>
+  </body>
+</html>

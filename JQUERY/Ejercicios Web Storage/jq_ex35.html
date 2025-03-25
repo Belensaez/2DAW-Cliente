@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style></style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      if (!localStorage.numberClicks) {
+        localStorage.numberClicks = 0;
+      }
+      $("p").text(localStorage.numberClicks);
+      $("#click").click(function () {
+        localStorage.cont = localStorage.numberClicks;
+        localStorage.numberClicks++;
+        $("p").text(localStorage.numberClicks);
+      });
+    });
+  </script>
+
+  <body>
+    <button id="click">CLICK ME!</button>
+    <h4>Number of clicks</h4>
+    <p></p>
+  </body>
+</html>

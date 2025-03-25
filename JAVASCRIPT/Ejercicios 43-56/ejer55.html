@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Control Example</title>
+    <script>
+      window.onload = function () {
+        const books = [
+          {
+            title: "To Kill a Mockingbird",
+            author: "Harper Lee",
+            alreadyRead: true,
+            portada: "ruiseñor.png",
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            alreadyRead: false,
+            portada: "george.png",
+          },
+          {
+            title: "Pride and Prejudice",
+            author: "Jane Austen",
+            alreadyRead: true,
+            portada: "pride.png",
+          },
+          {
+            title: "Moby Dick",
+            author: "Herman Melville",
+            alreadyRead: true,
+            portada: "moby.png",
+          },
+        ];
+        var body = document.querySelector("body");
+        books.forEach((book) => {
+          let div = document.createElement("div");
+          div.className = "book-container";
+
+          let h1 = document.createElement("h1");
+          h1.innerText = book.title;
+
+          let img = document.createElement("img");
+          img.src = book.portada;
+
+          let p = document.createElement("p");
+          p.innerText = book.author;
+
+          if (book.alreadyRead) {
+            div.classList.add("already-read");
+          } else {
+            div.classList.add("not-read");
+          }
+          div.appendChild(h1);
+          div.appendChild(img);
+          div.appendChild(p);
+          body.appendChild(div);
+        });
+      };
+    </script>
+    <style>
+      /* Define the CSS class for styling each book container */
+      .book-container {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        width: 200px;
+        height: 240px;
+        float: left;
+        font-family: Arial, sans-serif;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .book-container img {
+        max-width: 100px;
+        height: auto;
+      }
+      .book-container h1 {
+        font-size: 18px;
+        color: #333;
+      }
+      .book-container p {
+        font-size: 16px;
+        color: #666;
+      }
+      .already-read {
+        background-color: rgba(0, 128, 0, 0.2); /* Light green */
+      }
+      /* Styles for books that are not read yet */
+      .not-read {
+        background-color: rgba(255, 0, 0, 0.2); /* Light red */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My book List</h1>
+  </body>
+</html>

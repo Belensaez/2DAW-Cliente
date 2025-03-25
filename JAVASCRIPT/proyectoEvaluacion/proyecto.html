@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Management</title>
+    <link rel="stylesheet" href="./proyecto.css" />
+    <script src="./proyecto.js"></script>
+  </head>
+  <body>
+    <h1>Laptop Management System</h1>
+    <h3>Order By:</h3>
+    <button type="submit" id="orderByBrand">Brand</button>
+    <button type="submit" id="orderByRAM">RAM</button><br /><br />
+
+    Max price: <input type="number" id="maxPrice" />
+    Processor:
+    <select id="processorSelect"></select>
+    <button type="submit" id="filter">Filter</button>
+    <button type="submit" id="removeFilters">Remove Filters</button><br /><br />
+
+    <div class="form-container">
+      <h2>Add a New Laptop</h2>
+
+      <form id="add-laptop-form">
+        <label for="brand">Brand</label>
+        <select id="brand" required></select>
+        <label for="model">Model</label>
+        <input type="text" id="model" required />
+        <label>RAM</label>
+        <label><input type="radio" name="ram" value="8" required /> 8GB</label>
+        <label><input type="radio" name="ram" value="16" /> 16GB</label>
+        <label><input type="radio" name="ram" value="32" /> 32GB</label>
+        <label for="processor">Processor</label>
+        <input type="text" id="processor" required />
+        <label for="hard-disk">Hard Disk</label>
+        <input type="text" id="hard-disk" required />
+        <label for="price">Price</label>
+        <input type="number" id="price" required />
+        <button type="submit" id="submit">Save</button>
+      </form>
+    </div>
+    <button type="submit" id="mostrarForm">Show form</button>
+    <div id="laptop-list"></div>
+  </body>
+</html>

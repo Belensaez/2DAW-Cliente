@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      img {
+        width: 300px;
+        margin: 200px 600px;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var srcs = ["cookie.png", "cookie2.jpg", "cookie3.png", "cookie4.jpg"];
+      var cont = 1;
+      $("img").click(function () {
+        if (cont < srcs.length - 1) {
+          cont++;
+        } else {
+          cont = 0;
+        }
+        $(this).fadeOut("slow");
+        setTimeout(function () {
+          $("img").attr("src", srcs[cont]);
+        }, 500);
+        $(this).fadeIn("slow");
+      });
+    });
+  </script>
+
+  <body>
+    <img src="cookie.png" alt="imagen" />
+  </body>
+</html>

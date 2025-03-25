@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Custom name tags</title>
+        <link rel='stylesheet' href='name_tags.css'>
+        <script src="name_tags.js"></script>
+    </head>
+    <script>window.onload=function(){
+        let names=[];
+
+        for(i=0;i<3;i++){
+            let name=prompt("Enter a celibrity name");
+            names.push(name);
+        }
+        
+
+        let greeting=prompt("Enter a greeting word");
+        var allH1=document.querySelectorAll("h1");
+        console.log(allH1)
+        for(let value of allH1){
+            value.innerText=greeting;
+        }
+
+        var allP=document.querySelectorAll(" .name-tag p");
+        console.log(allP)
+        for(let i=0;i<allP.length;i++){
+            allP[i].innerText=names[i];
+        }
+    }
+
+    </script>
+    <body>
+        <p>These are the name tags for the party:</p>
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+        
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+    </body>
+</html>

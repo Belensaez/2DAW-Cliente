@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        let name=prompt("Enter the name of a teacher");
+        let teachers=["José", "Lola", "Lorenzo", "Mariluz","Maria Jose"];
+        let founded=false;
+            for(const teacher of teachers){
+                if(teacher.toUpperCase()==name.toUpperCase()){
+                    alert("The name has been founded");
+                    founded=true;
+                    break;
+                 
+                }
+            }
+            if(!founded){
+                alert(name+" is not a teacher");
+            }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

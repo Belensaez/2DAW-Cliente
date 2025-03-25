@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      img {
+        width: 300px;
+        position: relative;
+      }
+      div {
+        margin: 200px auto;
+        width: 300px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var srcs = ["cookie.png", "cookie2.jpg", "cookie3.png", "cookie4.jpg"];
+      var cont = 1;
+      var option = null;
+      $("#hideShow").click(function () {
+        option = "hide";
+      });
+      $("#slide").click(function () {
+        option = "slide";
+      });
+      $("#fade").click(function () {
+        option = "fade";
+      });
+      $("#exit").click(function () {
+        option = "exit";
+      });
+      $("img").click(function () {
+        if (cont < srcs.length - 1) {
+          cont++;
+        } else {
+          cont = 0;
+        }
+        if (option == "hide") {
+          $("img").hide("slow", function () {
+            $(this).attr("src", srcs[cont]);
+            $(this).show("slow");
+          });
+        } else if (option == "slide") {
+          $(this).slideUp("slow", function () {
+            $(this).attr("src", srcs[cont]).slideDown("slow");
+          });
+        } else if (option == "fade") {
+          $(this).fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        } else if (option == "exit") {
+          $(this).animate({ left: "+=300px", opacity: 0 }, "slow", function () {
+            $(this).css({ left: "-300px", opacity: 1 });
+            $(this).attr("src", srcs[cont]).animate({ left: "0px" }, "slow");
+          });
+        } else {
+          // Default behavior: fade out and in
+          $(this).fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        }
+      });
+    });
+  </script>
+
+  <body>
+    <button id="hideShow">hide/show</button>
+    <button id="slide">slide up/slide down</button>
+    <button id="fade">fade out/fade</button>
+    <button id="exit">exit right / enter left</button>
+    <div><img src="cookie.png" alt="imagen" /></div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var myText = document.getElementsByName("myText")[0];
+      var p = document.querySelector("p");
+
+      const regex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+
+      myText.addEventListener("keydown", function () {
+        var value = myText.value;
+        if (regex.test(value)) {
+          myText.style.backgroundColor = "green";
+        } else {
+          myText.style.backgroundColor = "red";
+        }
+      });
+    };
+  </script>
+  <body>
+    <form>Password:<input type="text" name="myText" /></form>
+    <p></p>
+  </body>
+</html>

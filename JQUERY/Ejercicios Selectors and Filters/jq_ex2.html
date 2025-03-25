@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prueba Selectores</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var pAtt = $("p[class]");
+      console.log(pAtt);
+
+      var pChild = $("p:has(*)");
+      console.log(pChild);
+
+      var p1 = $("p[class='paragraph1']");
+      console.log(p1);
+
+      var pLuigi = $("p:contains('Luigi')");
+      console.log(pLuigi);
+
+      var pPara = $("p[class^='para']");
+      console.log(pPara);
+
+      var pPara2 = $("p[class^='para'][align='center']");
+      console.log(pPara2);
+      var noSiblings = $("*:only-child");
+      console.log(noSiblings);
+
+      var penultimo = $("ul:has('li.a')");
+      console.log(penultimo);
+
+      var ultimo = $("li:last-child");
+      console.log(ultimo);
+    });
+  </script>
+  <body>
+    <ul id="list1">
+      <li class="a">Item 1</li>
+      <li class="b">Item 2</li>
+      <li class="a">Item 3</li>
+      <li class="b">Item 4</li>
+    </ul>
+
+    <p id="hero" class="class1">Mario</p>
+    <p class="class1"></p>
+    <p class="paragraph1">Luigi</p>
+    <div>
+      <p class="class2">Toad</p>
+    </div>
+    <p class="paragraph2" align="center">Bowser</p>
+    <p style="display: none">Peach</p>
+  </body>
+</html>

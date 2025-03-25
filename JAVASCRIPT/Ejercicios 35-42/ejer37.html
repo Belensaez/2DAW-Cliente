@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table id="myTable" border="1">
+      <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+      </tr>
+      <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+      </tr>
+    </table>
+    <br />
+    <script>
+      function addRow() {
+        const table = document.getElementById("myTable");
+        const columnsNumber = document.getElementsByTagName("tr")[0].getElementsByTagName("td").length;
+        let newRow = document.createElement("tr");
+        for (let i = 1; i<=columnsNumber; i++) {
+          let newCell = document.createElement("td");
+          newCell.innerText="Row3 cell"+i;
+          newRow.appendChild(newCell);
+        }
+        table.appendChild(newRow);
+      }
+      function addColumn() {
+        const table = document.getElementById("myTable");
+        
+        
+        let rows = document.getElementsByTagName("tr");
+     
+        console.log(rows.length);
+        for (let i = 0; i<rows.length; i++) {
+          let newCell = document.createElement("td");
+          newCell.innerText="Row"+(i+1)+" cell3";
+          rows[i].appendChild(newCell);
+          console.log(rows[i]);          
+        }
+        
+      }
+
+      addRow();
+      addColumn();
+    </script>
+  </body>
+</html>

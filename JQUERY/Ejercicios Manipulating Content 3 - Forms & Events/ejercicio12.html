@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Completo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var submit = $("button[type='submit']");
+      function setValue(selector, value) {
+        $(selector).val(value);
+        console.log(name);
+      }
+      function setValueMultiple(selectors, value) {
+        $.each(selectors, function (index, selector) {
+          $(selector).val(value);
+          console.log(selector);
+        });
+      }
+
+      submit.click(function (event) {
+        event.preventDefault();
+        var radio = $('input[type="radio"][name="genero"]:checked').val();
+        if (radio) {
+          alert(radio);
+        }
+        var selector = $('input[name="nombre"]');
+        var value = "nombreee";
+        setValue(selector, value);
+        var selectors = $("#nombre, #email, #edad");
+        setValueMultiple(selectors, "example");
+
+        $('input[type="radio"][name="genero"]').each(function () {
+          var value = $(this).val();
+          console.log(value);
+        });
+      });
+    });
+  </script>
+  <body>
+    <h1>Formulario Completo</h1>
+    <form action="/submit-form" method="post">
+      <p><strong>Información personal:</strong></p>
+
+      <label for="nombre">Nombre:</label><br />
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Tu nombre"
+      /><br /><br />
+
+      <label for="email">Correo Electrónico:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Tu correo"
+      /><br /><br />
+
+      <label for="edad">Edad:</label><br />
+      <input
+        type="number"
+        id="edad"
+        name="edad"
+        min="1"
+        max="120"
+      /><br /><br />
+
+      <p><strong>Selecciona tu género:</strong></p>
+      <label>
+        <input type="radio" name="genero" value="masculino" />
+        Masculino </label
+      ><br />
+      <label>
+        <input type="radio" name="genero" value="femenino" />
+        Femenino </label
+      ><br />
+      <label>
+        <input type="radio" name="genero" value="otro" />
+        Otro </label
+      ><br /><br />
+
+      <p><strong>Selecciona tus intereses:</strong></p>
+      <label>
+        <input type="checkbox" name="intereses" value="tecnologia" />
+        Tecnología </label
+      ><br />
+      <label>
+        <input type="checkbox" name="intereses" value="musica" />
+        Música </label
+      ><br />
+      <label>
+        <input type="checkbox" name="intereses" value="deportes" />
+        Deportes </label
+      ><br />
+      <label>
+        <input type="checkbox" name="intereses" value="arte" />
+        Arte </label
+      ><br />
+      <label>
+        <input type="checkbox" name="intereses" value="viajes" />
+        Viajes </label
+      ><br /><br />
+
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        rows="4"
+        cols="50"
+        placeholder="Escribe tu mensaje aquí..."
+      ></textarea
+      ><br /><br />
+
+      <p><strong>Selecciona tu país:</strong></p>
+      <select name="pais" id="pais">
+        <option value="">--Selecciona tu país--</option>
+        <option value="mexico">México</option>
+        <option value="espana">España</option>
+        <option value="argentina">Argentina</option>
+        <option value="colombia">Colombia</option>
+        <option value="chile">Chile</option></select
+      ><br /><br />
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Restablecer</button>
+    </form>
+  </body>
+</html>

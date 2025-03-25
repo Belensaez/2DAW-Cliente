@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <link rel="stylesheet" href="exer40-add-remove.css">
+
+</head>
+<script>
+  $(document).ready(function () {
+    const players = [
+      {
+        id: 1,
+        image: 'chris_jones.jpg',
+        name: 'Chris',
+        surname: 'Jones',
+        position: 'Point Guard',
+        dateOfBirth: '1993-04-10',
+        pointsPerGame: 12.5,
+      },
+      {
+        id: 2,
+        image: 'stefan_jovic.jpg',
+        name: 'Stefan',
+        surname: 'Jovic',
+        position: 'Point Guard',
+        dateOfBirth: '1990-11-03',
+        pointsPerGame: 8.3,
+      },
+      {
+        id: 3,
+        image: 'sergio_de_larrea.jpg',
+        name: 'Sergio',
+        surname: 'De Larrea',
+        position: 'Point Guard',
+        dateOfBirth: '2004-02-18',
+        pointsPerGame: 4.0,
+      },
+      {
+        id: 4,
+        image: 'jean_montero.jpg',
+        name: 'Jean',
+        surname: 'Montero',
+        position: 'Shooting Guard',
+        dateOfBirth: '2003-07-05',
+        pointsPerGame: 11.5,
+      },
+      {
+        id: 5,
+        image: 'brancou_badio.jpg',
+        name: 'Brancou',
+        surname: 'Badio',
+        position: 'Shooting Guard',
+        dateOfBirth: '1999-02-17',
+        pointsPerGame: 9.1,
+      }
+    ];
+    var storedPlayers = JSON.parse(localStorage.getItem('players')) || [];
+    var divPlayers = $("#cards");
+
+    function cleanContainer() {
+      $("#cards").empty();
+    }
+
+    // Calculate age from date of birth
+    function calculateAge(dateOfBirth) {
+      const dob = new Date(dateOfBirth);
+      const diff = Date.now() - dob.getTime();
+      const ageDate = new Date(diff);
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+    localStorage.removeItem("players")
+    if (!localStorage.players) {
+      localStorage.players = JSON.stringify(players);
+    } else {
+      localStorage.clear()
+    }
+
+  
+    showPlayers();
+    function showPlayers() {
+      $.each(storedPlayers, function (index, player) {
+        divPlayers.append("<div class='card' data-id='" + index + "'><img src='imgs/" + player.image + "'><h2>" + player.name + " " + player.surname + "</h2><p>Position: " + player.position + "</p><br><p>Date of Birth: " + player.dateOfBirth + "</p><br><p>Points: " + player.pointsPerGame + "</p><br></div>");
+
+      })
+    }
+
+    $("#showForm").click(function () {
+      $("form").toggleClass("newPlayerForm")
+    })
+    $("#submitForm").click(function (e) {
+      e.preventDefault();
+      var pid = $("#pid").val();
+      var pname = $("input[name='pname']").val();
+      var psurname = $("input[name='psurname']").val();
+      var dob = $("input[name='dob']").val();
+      var position = $("select[name='position']").val();
+      var ppg = $("input[name='ppg']").val();
+
+      if(pid<0 || isNaN(ppg) ){
+        alert("MAL")
+      }else{
+        console.log(pname)
+      var player = {
+        id: pid,
+        image: 'default.jpg',
+        name: pname,
+        surname: psurname,
+        position: position,
+        dateOfBirth: dob,
+        pointsPerGame: ppg
+      }
+    
+    storedPlayers.push(player);
+    localStorage.setItem('players', JSON.stringify(players));
+
+      cleanContainer();
+      showPlayers()
+
+      }
+
+     
+    })
+  });
+</script>
+
+<body>
+  <div class="header">
+    <h1>TEAM MANAGEMENT</h1>
+  </div>
+  <button id="showForm" style="margin: 5px 0px;">Show Form</button>
+  <div id="newPlayerForm">
+    NEW PLAYER
+    <form action="#" method="post">
+      <label for="pid">Jersey number: </label>
+      <input type="number" name="pid" placeholder="#"><br>
+      <label for="pname">Name: </label>
+      <input type="text" name="pname" placeholder="Name"><br>
+      <label for="psurname">Surname: </label>
+      <input type="text" name="psurname" placeholder="Surname"><br>
+      <label for="position">Position: </label>
+      <select name="position">
+        <option value="choose">Choose Position</option>
+        <option value="Center">Center</option>
+        <option value="Center/Forward">Center/Forward</option>
+        <option value="Point Guard">Point Guard</option>
+        <option value="Power Forward">Power Forward</option>
+        <option value="Shooting Guard">Shooting Guard</option>
+        <option value="Small Forward">Small Forward</option>
+      </select><br>
+      <label for="dob">Date of Birth: </label>
+      <input type="date" name="dob"><br>
+      <label for="ppg">PPG: </label>
+      <input type="number" name="ppg" step=".1" placeholder="PPG"><br>
+      <button id="submitForm" style="margin: 5px 0px;">Add Player</button>
+  </div>
+  <div id="cards"></div>
+
+</body>
+
+</html>

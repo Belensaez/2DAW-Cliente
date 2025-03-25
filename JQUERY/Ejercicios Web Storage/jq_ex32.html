@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      div#container {
+        border: 3px solid black;
+        width: 600px;
+        height: 300px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        position: relative;
+      }
+      #container div {
+        float: left;
+        width: 200px;
+        height: 150px;
+        overflow: hidden; /* Oculta el contenido que se salga */
+      }
+      img {
+        width: 200%;
+        height: 200%;
+        opacity: 0.5;
+      }
+      .empty {
+        border-bottom: 2px solid red;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $("#save").click(function () {
+        var nameInput = $("#name").val().trim();
+        var surnameInput = $("#surname").val().trim();
+        var commentInput = $("#comment").val().trim();
+        if (nameInput != "" && surnameInput != "" && commentInput != "") {
+          localStorage.name = nameInput;
+          localStorage.surname = surnameInput;
+          localStorage.comment = commentInput;
+        }
+        if (nameInput === "") {
+          $("#name").addClass("empty");
+        } else {
+          $("#name").removeClass("empty");
+        }
+        if (surnameInput === "") {
+          $("#surname").addClass("empty");
+        } else {
+          $("#surname").removeClass("empty");
+        }
+        if (commentInput === "") {
+          $("#comment").addClass("empty");
+        } else {
+          $("#comment").removeClass("empty");
+        }
+      });
+      $("#load").click(function () {
+        if (localStorage.name && localStorage.surname && localStorage.comment) {
+          $("#name").val(localStorage.name);
+          $("#surname").val(localStorage.surname);
+          $("#comment").val(localStorage.comment);
+          $("p").text("");
+        } else {
+          $("p").text("There is no data yet");
+        }
+      });
+      $("#delete").click(function () {
+        localStorage.clear();
+        sessionStorage.clear();
+        $("#name").val("");
+        $("#surname").val("");
+        $("#comment").val("");
+      });
+    });
+  </script>
+
+  <body>
+    Name: <input type="text" id="name" />
+
+    Surname: <input type="text" id="surname" />
+
+    Comments: <input type="text" id="comment" /><br /><br />
+
+    <button id="save">Save</button>
+    <button id="load">Load</button>
+    <button id="delete">Delete</button>
+    <p></p>
+  </body>
+</html>

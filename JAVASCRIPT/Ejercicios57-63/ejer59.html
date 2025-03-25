@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var form = document.forms[0];
+      var checkboxs = form.defenders;
+      var button = form.button;
+      var select = document.createElement("select");
+      select.name = "rest";
+      var option1 = document.createElement("option");
+      option1.value = "defenders";
+      option1.innerText = "Defenders";
+      option1.selected = true;
+      var option2 = document.createElement("option");
+      option2.value = "justiceLeague";
+      option2.innerText = "Justice League";
+      var option3 = document.createElement("option");
+      option3.value = "avengers";
+      option3.innerText = "Avengers";
+
+      select.appendChild(option2);
+      select.appendChild(option3);
+      select.appendChild(option1);
+
+      button.onclick = function () {
+        let cont = 0;
+        for (checkbox of checkboxs) {
+          if (checkbox.checked) {
+            cont++;
+          }
+        }
+        if (cont == 4) {
+          form.insertBefore(select, button);
+
+          var br = document.createElement("br");
+          form.insertBefore(br, button);
+          var br2 = document.createElement("br");
+          form.insertBefore(br2, button);
+        }
+      };
+    };
+  </script>
+  <body>
+    <h5>The Defenders</h5>
+    <form>
+      <input type="checkbox" value="daredevil" name="defenders" /> Daredevil
+      <input type="checkbox" value="jessicaJones" name="defenders" /> Jessica
+      Jones <input type="checkbox" value="lukeCage" name="defenders" />Luke Cage
+      <input type="checkbox" value="ironFist" name="defenders" /> Iron Fist
+      <br /><br />
+      <input type="button" name="button" value="send" />
+    </form>
+  </body>
+</html>

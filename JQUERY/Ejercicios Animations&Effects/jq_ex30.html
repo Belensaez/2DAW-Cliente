@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      img {
+        width: 300px;
+        position: relative;
+      }
+      div {
+        margin: 200px auto;
+        width: 300px;
+        position: relative;
+      }
+      #next {
+        position: absolute;
+        top: 200px;
+        right: 600px; /* Ajusta según tu diseño */
+      }
+      #last {
+        position: absolute;
+        top: 200px;
+        left: 600px; /* Ajusta según tu diseño */
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var srcs = ["cookie.png", "cookie2.jpg", "cookie3.png", "cookie4.jpg"];
+      var cont = 1;
+      var option = null;
+      $("#hideShow").click(function () {
+        option = "hide";
+      });
+      $("#slide").click(function () {
+        option = "slide";
+      });
+      $("#fade").click(function () {
+        option = "fade";
+      });
+      $("#exit").click(function () {
+        option = "exit";
+      });
+      $("#next").click(function () {
+        if (cont < srcs.length - 1) {
+          cont++;
+        } else {
+          cont = 0;
+        }
+        if (option == "hide") {
+          $("img").hide("slow", function () {
+            $("img").attr("src", srcs[cont]);
+            $("img").show("slow");
+          });
+        } else if (option == "slide") {
+          $("img").slideUp("slow", function () {
+            $(this).attr("src", srcs[cont]).slideDown("slow");
+          });
+        } else if (option == "fade") {
+          $("img").fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        } else if (option == "exit") {
+          $("img").animate(
+            { left: "+=300px", opacity: 0 },
+            "slow",
+            function () {
+              $(this).css({ left: "-300px", opacity: 1 });
+              $(this).attr("src", srcs[cont]).animate({ left: "0px" }, "slow");
+            }
+          );
+        } else {
+          // Default behavior: fade out and in
+          $("img").fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        }
+      });
+      $("#last").click(function () {
+        cont = srcs.length - 1;
+        if (option == "hide") {
+          $("img").hide("slow", function () {
+            $("img").attr("src", srcs[cont]);
+            $("img").show("slow");
+          });
+        } else if (option == "slide") {
+          $("img").slideUp("slow", function () {
+            $(this).attr("src", srcs[cont]).slideDown("slow");
+          });
+        } else if (option == "fade") {
+          $("img").fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        } else if (option == "exit") {
+          $("img").animate(
+            { left: "+=300px", opacity: 0 },
+            "slow",
+            function () {
+              $(this).css({ left: "-300px", opacity: 1 });
+              $(this).attr("src", srcs[cont]).animate({ left: "0px" }, "slow");
+            }
+          );
+        } else {
+          // Default behavior: fade out and in
+          $("img").fadeOut("slow", function () {
+            $(this).attr("src", srcs[cont]).fadeIn("slow");
+          });
+        }
+      });
+      $("#image1").click(function () {
+        $("img").fadeOut("slow", function () {
+          $(this).attr("src", srcs[0]).fadeIn("slow");
+          cont = 0;
+        });
+      });
+      $("#image2").click(function () {
+        $("img").fadeOut("slow", function () {
+          $(this).attr("src", srcs[1]).fadeIn("slow");
+          cont = 1;
+        });
+      });
+      $("#image3").click(function () {
+        $("img").fadeOut("slow", function () {
+          $(this).attr("src", srcs[2]).fadeIn("slow");
+          cont = 2;
+        });
+      });
+      $("#image4").click(function () {
+        $("img").fadeOut("slow", function () {
+          $(this).attr("src", srcs[3]).fadeIn("slow");
+          cont = 3;
+        });
+      });
+    });
+  </script>
+
+  <body>
+    <button id="hideShow">hide/show</button>
+    <button id="slide">slide up/slide down</button>
+    <button id="fade">fade out/fade</button>
+    <button id="exit">exit right / enter left</button>
+
+    <button id="next">Next image</button>
+    <button id="last">Last image</button>
+    <div>
+      <img src="cookie.png" alt="imagen" />
+      <button id="image1">Image 1</button>
+      <button id="image2">Image 2</button>
+      <button id="image3">Image 3</button>
+      <button id="image4">Image 4</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>DWEC</title>
+      <script type="text/javascript" src="assets/jquery-3.7.1.slim.min.js"></script>
+    </head>
+    <script>
+$(document).ready(function() {
+  $("li:first").clone().appendTo("ul")
+  $("p:first").css({
+    "border":"1px solid red",
+    "background-color":"green"
+  })
+  $("li:first").remove();
+  $(".avengers").find("li").remove();
+  $("<li>New Content</li>").appendTo(".avengers");
+  for(let i=0;i<10;i++){
+    $("body").append("<p>Paragraph "+(i+1)+"</p>")
+  }
+});
+</script>
+</html>
+    <body>
+
+      <ul class="avengers">
+        <li>Ironman</li>
+        <li>Thor</li>
+        <li>Captain America</li>
+        <li>Hulk</li>
+      </ul>
+
+      <p>Test text</p>
+      <p>Test text 2</p>
+      <p>Test text 3</p>
+      <p>Test text 4</p>
+
+    </body>
+</html>

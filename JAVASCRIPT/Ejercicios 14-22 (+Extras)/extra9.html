@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+camelize("Desarrollo aplicaciones Web");
+        //console.log(camelize("DESAROLLO Aplicaciones Web")); // "desarrolloAplicacionesWeb" 
+      function camelize(string){
+        let array=string.split(" ");
+
+        //primer elemnto del array
+        let element=array[0];
+        
+
+        let character=element[0].toLowerCase();
+        let newElement=character+element.slice(1);
+        array.shift();
+        array.unshift(newElement);
+        
+        //segundo
+        element=array[1];
+        character=element[0].toUpperCase();
+        newElement=character+element.slice(1);
+        array.splice(1,1);
+        array.splice(1,0,newElement);
+
+         //tercero
+         element=array[2];
+        character=element[0].toUpperCase();
+        newElement=character+element.slice(1);
+        array.splice(2,1);
+        array.splice(2,0,newElement);
+         
+        let finalString=array.join("");
+        document.write(finalString);
+      
+      }
+
+    </script>
+</body>
+</html>

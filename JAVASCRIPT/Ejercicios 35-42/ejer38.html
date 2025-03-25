@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table id="myTable" border="1">
+      <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+      </tr>
+      <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+      </tr>
+    </table>
+    <br />
+    <script>
+      function changeCell(a, b, cadena) {
+        const table = document.getElementById("myTable");
+
+        const columnsNumber = document
+          .getElementsByTagName("tr")[0]
+          .getElementsByTagName("td").length;
+        const rowsNumber = document.getElementsByTagName("tr").length;
+
+        if (a >= columnsNumber || b >= rowsNumber) {
+          document.write("ERROR:Rage out of bonds");
+        } else if (table == null) {
+          document.write("ERROR:Table doesn't exist");
+        } else {
+          const cell = document
+            .getElementsByTagName("tr")
+            [a].getElementsByTagName("td")[b];
+          cell.innerText = cadena;
+        }
+      }
+
+      changeCell(1, 0, "Holi");
+    </script>
+  </body>
+</html>

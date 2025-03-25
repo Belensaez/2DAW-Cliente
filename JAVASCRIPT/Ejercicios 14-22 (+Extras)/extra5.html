@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [1, 2, 3, 4, 5];
+      let number = 3;
+      document.write(
+        "The " +
+          number +
+          " first elements dof array are : " +
+          toArrayAString(array, number)
+      );
+
+      function toArrayAString(array, number) {
+        let arrayNuevo = array.slice(0, number);
+        return arrayNuevo.toString();
+      }
+    </script>
+  </body>
+</html>

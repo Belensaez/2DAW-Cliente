@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const letterMappings = new Map([
+        [0, "T"],
+        [1, "R"],
+        [2, "W"],
+        [3, "A"],
+        [4, "G"],
+        [5, "M"],
+        [6, "Y"],
+        [7, "F"],
+        [8, "P"],
+        [9, "D"],
+        [10, "X"],
+        [11, "B"],
+        [12, "N"],
+        [13, "J"],
+        [14, "Z"],
+        [15, "S"],
+        [16, "Q"],
+        [17, "V"],
+        [18, "H"],
+        [19, "L"],
+        [20, "C"],
+        [21, "K"],
+        [22, "E"],
+      ]);
+
+      function calculateLetter(dniNumber) {
+        var last8Digits = dniNumber.substring(dniNumber.length - 8);
+
+        var modulo = parseInt(last8Digits) % 23;
+
+        var letter = letterMappings.get(modulo);
+
+        return letter;
+      }
+
+      var dniNumber = prompt("Enter the DNI number:");
+
+      var letter = calculateLetter(dniNumber);
+      console.log(
+        "The corresponding letter for DNI " + dniNumber + " is: " + letter
+      );
+    </script>
+  </body>
+</html>

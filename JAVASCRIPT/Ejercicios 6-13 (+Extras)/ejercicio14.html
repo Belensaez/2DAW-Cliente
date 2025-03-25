@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        let array = [];
+  for (let i = 0; i < 10; i++) {
+    array.push(Math.floor(Math.random()*10 + 1));
+  }
+  let request=parseInt(prompt("Enter a number to get an element to the array"));
+    if(request<0 || request>array.length){
+        alert("ERROR:Number out of index");
+    }else{
+        alert(array[request]);
+    }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

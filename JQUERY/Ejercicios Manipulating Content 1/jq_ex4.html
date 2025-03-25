@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Avengers</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<script>
+   $(document).ready(function () {
+    var liText=$("li");
+    liText.html("Batman rules");
+
+    $("a").attr("href","https://es.wikipedia.org/wiki/Batman")
+
+    var img=$("img").attr("alt","Batman image");
+
+    $('img').attr({
+    'src': 'https://example.com/new-image.jpg',
+    'alt': 'New image description'
+});
+
+$("img").removeAttr("alt");
+
+ });
+</script>
+<body>
+  
+  <ul class="avengers">
+    <li>Ironman</li>
+    <li>Thor</li>
+    <li>Captain America</li>
+    <li>Hulk</li>
+  </ul>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg/220px-Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg"></img>
+
+<a href="#">View at Wikipedia</a>
+</body>
+</html>

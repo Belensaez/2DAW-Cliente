@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prices</title>
+    <link rel="stylesheet" href="ejer43.css" />
+    <script>
+      //The best way to put the ids is to put them in an array and go through the array of objects and enter them
+      window.onload = function () {
+        var players = [
+          {
+            name: "Lebron James",
+            age: 30,
+            pounts: 15.0,
+            position: "forward",
+            src: "./lebron.png",
+          },
+          {
+            name: "Federico",
+            age:23,
+            pounts: 23.9,
+            position: "Midfielder",
+            src: "./federico.png",
+          },
+          {
+            name: "Ferland",
+            age: 30,
+            pounts: 18.3,
+            position: "Defender",
+            src: "./Ferland.png",
+          },
+          {
+            name: "Mbappe",
+            age: 30,
+            pounts: 22.0,
+            position: "Midfielder",
+            src: "./mbappe.png",
+          },
+          {
+            name: "Dani Caballos",
+            age: 35,
+            pounts: 20.9,
+            position: "Goalkeeper",
+            src: "./DaniCaballos.png",
+          },
+        ];
+
+          var body=document.querySelector("body")
+        var container=document.createElement("div");
+        container.classList.add("container");
+        body.appendChild(container)
+        for (let player of players) {
+           
+        var card2=document.createElement("div");
+        
+        card2.classList.add("card");
+        container.appendChild(card2);
+        
+        var image=document.createElement("img");
+        image.src=player.src;
+        card2.appendChild(image);
+
+        var h4=document.createElement("h4");
+        h4.innerText=player.name;
+        card2.appendChild(h4);
+
+        var ul=document.createElement("ul");
+        card2.appendChild(ul);
+        
+        var li=document.createElement("li");
+        li.innerText=player.position;
+        var li2=document.createElement("li");
+        li2.innerText=player.pounts+" pounts per game";
+        var li3=document.createElement("li");
+        li3.innerText=player.age+" years";
+        ul.appendChild(li);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+
+        var button=document.createElement("button");
+        button.classList.add("btn");
+        button.innerText="Remove";
+        card2.appendChild(button);
+
+
+
+        }
+        console.log(container);
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+     
+    </div>
+
+  
+  </body>
+</html>
