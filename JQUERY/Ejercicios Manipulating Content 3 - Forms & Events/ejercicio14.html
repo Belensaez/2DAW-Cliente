@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Completo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style>
+    div {
+      width: 200px;
+    }
+    .active {
+      border: 1px solid red;
+    }
+    .inactive {
+      border: 1px solid green;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $("div").mouseover(function () {
+        $(this).toggleClass("active");
+      });
+      $("div").mouseout(function () {
+        $(this).toggleClass("active");
+      });
+
+      $("div").click(function () {
+        $(this).off("mouseover");
+        $(this).off("mouseout");
+        $(this).removeClass("active");
+        $(this).html("Clicket");
+      });
+    });
+  </script>
+  <body>
+    <div>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, atque
+        error, aspernatur mollitia veniam esse ad accusamus culpa quis commodi
+        iure illum, accusantium quo. Vero magni similique eos corporis nisi!
+      </p>
+    </div>
+  </body>
+</html>

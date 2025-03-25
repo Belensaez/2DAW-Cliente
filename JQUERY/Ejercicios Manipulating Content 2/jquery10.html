@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Avengers</title>
+    <script
+      type="text/javascript"
+      src="assets/jquery-3.7.1.slim.min.js"
+    ></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+
+        $("button").each(function (i) {
+          var text = $(this).text();
+         
+        $(this).remove();
+         $("<h1></h1>").text(text).appendTo("div");
+      
+        });
+
+    });
+  </script>
+  <body>
+    <div>
+    <button>I'm a button1</button>
+    <button class="special">I'm a button2</button>
+    <button>Click me</button>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prueba Selectores</title>
+    <script
+      type="text/javascript"
+      src="assets/jquery-3.7.1.slim.min.js"
+    ></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var p = $("p");
+      console.log(p);
+
+      var todo_list = $("#todo-list");
+      console.log(todo_list);
+
+      var pAndLi = $("p,li.b");
+      console.log(pAndLi);
+
+      var all = $("*");
+      console.log(all);
+
+      var importantAndClassA = $("#important.a");
+      console.log(importantAndClassA);
+
+      var siblings = $("ul+p");
+      console.log(siblings);
+
+      var ulInside = $("ul>*.b");
+      console.log(ulInside);
+
+      var t1Andt2 = $(".t1.t2");
+      console.log(t1Andt2);
+    });
+  </script>
+
+  <body>
+    <ul id="todo-list">
+      <li id="important" class="a">Estudiar</li>
+      <li class="b">Ir al gimnasio</li>
+      <li class="a">Comprar pan</li>
+      <li class="b">Enviar correos del trabajo</li>
+    </ul>
+
+    <p class="t1 t2">Párrafo 1</p>
+    <p class="t1">Párrafo 2</p>
+    <p class="t2">Párrafo 3</p>
+    <p class="t1 t2">Párrafo 4</p>
+    <p>Párrafo 5</p>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Completo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style></style>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("body").append("<div>This is my div</div>");
+        $("div").css({
+          width: "200px",
+          height: "100px",
+          border: "1px solid red",
+        });
+        $(this).off("click");
+      });
+    });
+  </script>
+  <body>
+    <button>Create Div</button>
+  </body>
+</html>

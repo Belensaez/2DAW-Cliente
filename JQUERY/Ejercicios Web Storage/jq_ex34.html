@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      div#container {
+        border: 3px solid black;
+        width: 600px;
+        height: 300px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        position: relative;
+      }
+      #container div {
+        float: left;
+        width: 200px;
+        height: 150px;
+        overflow: hidden; /* Oculta el contenido que se salga */
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var amount = 1000;
+      $("p").text(amount);
+      $("#income").click(function () {
+        amount += parseInt($("#slot").val());
+        localStorage.amount = amount;
+        $("p").text(localStorage.amount);
+      });
+      $("#outcome").click(function () {
+        amount -= parseInt($("#slot").val());
+        localStorage.amount = amount;
+        $("p").text(localStorage.amount);
+      });
+    });
+  </script>
+
+  <body>
+    Slot: <input type="number" id="slot" />
+    <button id="income">Income</button>
+    <button id="outcome">Outcome</button>
+    <h4>Amount</h4>
+    <p></p>
+  </body>
+</html>

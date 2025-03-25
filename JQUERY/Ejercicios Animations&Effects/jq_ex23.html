@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      button {
+        width: 200px;
+        margin: 17px auto;
+        height: 36px;
+        position: relative;
+        margin: 40px auto; /* Centra el botón si es necesario */
+        display: block;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var button = $("button");
+      button.mouseover(function () {
+        button.stop(true, true);
+        button.animate({ left: "+=30px" }, 37);
+        button.animate({ left: "-=30px" }, 37);
+        button.animate({ left: "+=30px" }, 37);
+        button.animate({ left: "-=30px" }, 37);
+        button.animate({ left: "+=30px" }, 37);
+        button.animate({ left: "-=30px" }, 37);
+      });
+      button.click(function () {
+        button.stop(true, true);
+        button.animate({ top: "-=100px" }, 200);
+        button.animate({ top: "+=100px" }, 200);
+        button.animate({ top: "-=100px" }, 200);
+        button.animate({ top: "+=100px" }, 200);
+        button.animate({ top: "-=100px" }, 200);
+        button.animate({ top: "+=100px" }, 200);
+      });
+    });
+  </script>
+
+  <body>
+    <button>Button</button>
+  </body>
+</html>

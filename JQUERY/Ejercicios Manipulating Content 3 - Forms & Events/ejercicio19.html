@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>A1_1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var placeHolder = $("input[name='username']").attr("placeholder");
+      $("input[name='username']").attr("value", placeHolder);
+    });
+  </script>
+  <body>
+    <form>
+      <label for="username">UserName:</label>
+      <input id="username" name="username" placeholder="JohnDoe" />
+      <label for="email">Email:</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="email@fake.com"
+      />
+      <input type="button" value="Login" />
+    </form>
+  </body>
+</html>

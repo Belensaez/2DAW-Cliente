@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prueba Selectores</title>
+    <!-- jQuery desde CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var firtsP = $("p:first");
+      console.log(firtsP);
+
+      var elementsIndex = $("*:gt(1)");
+      console.log(elementsIndex);
+
+      var lastP = $("p:last");
+      console.log(lastP);
+
+      var allButOne = $("p:not(p:eq(1))");
+      console.log(allButOne);
+
+      var even = $("p:even");
+      console.log(even);
+
+      var firsA = $("*.a:first");
+      console.log(firsA);
+
+      var firsA = $("*.b:odd");
+      console.log(firsA);
+    });
+  </script>
+  <body>
+    <ul id="todo-list">
+      <li id="important" class="a">Estudiar</li>
+      <li class="b">Ir al gimnasio</li>
+      <li class="a">Comprar pan</li>
+      <li class="b">Enviar correos del trabajo</li>
+    </ul>
+
+    <p class="t1 t2">Párrafo 1</p>
+    <p class="t1">Párrafo 2</p>
+    <p class="t2">Párrafo 3</p>
+    <p class="t1 t2">Párrafo 4</p>
+    <p>Párrafo 5</p>
+  </body>
+</html>

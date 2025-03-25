@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DWEC</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $("p").wrapAll("<div style='border: 3px solid red'></div>");
+      $("p").wrap("<div style='border: 1px solid blue'></div>");
+      $("li:first").replaceWith("<li>Belén</li>");
+      var firstLi = $(".avengers li:first");
+      $("p:first").replaceWith(firstLi);
+    });
+  </script>
+  <body>
+    <ul class="avengers">
+      <li>Ironman</li>
+      <li>Thor</li>
+      <li>Captain America</li>
+      <li>Hulk</li>
+    </ul>
+
+    <p>Test text</p>
+    <p>Test text 2</p>
+    <p>Test text 3</p>
+    <p>Test text 4</p>
+  </body>
+</html>

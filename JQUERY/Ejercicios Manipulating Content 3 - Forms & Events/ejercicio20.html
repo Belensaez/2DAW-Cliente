@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>A2_2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style></style>
+    <script>
+      $(document).ready(function () {
+        $("style").html(".field {  border: 1px solid black;margin: 5px 0; }");
+      });
+
+      var log = $("input");
+
+      // Envolver pares de <label> con <input> o <textarea> en un div.field
+      $.each($("label"), function () {
+        // Busca el próximo elemento hermano que sea un <input> o <textarea>
+        var inputOrTextarea = $(this).next();
+        if (inputOrTextarea.length > 0) {
+          // Envolver ambos en un <div> con la clase "field"
+          $(this).add(inputOrTextarea).wrapAll('<div class="field"></div>');
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <form id="contact" method="post">
+      <label for="name">Name:</label>
+      <input id="name" name="name" />
+      <label for="email">Email:</label>
+      <input id="email" name="email" />
+      <label for="subject">Subject:</label>
+      <input id="subject" name="subject" />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <input type="button" value="Submit" />
+    </form>
+  </body>
+</html>

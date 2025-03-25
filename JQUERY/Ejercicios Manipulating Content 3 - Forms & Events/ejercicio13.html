@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Completo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style>
+    .active {
+      border: 1px dashed red;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $.each($("p"), function (index, p) {
+        $(p).click(function () {
+          $(p).addClass("active");
+        });
+      });
+      $("#clearActive").click(function () {
+        $("p").removeClass("active");
+      });
+      $("#checkActive").click(function () {
+        $.each($("p"), function (index, p) {
+          if ($(p).hasClass("active")) {
+            $(p).append("<span> Active </span>");
+          }
+        });
+      });
+      $("#toggleActive").click(function () {
+        $("p").toggleClass("active");
+      });
+      $("#addCSS").click(function () {
+        $.each($("p"), function (index, p) {
+          if ($(p).hasClass("active")) {
+            $(p).css("background-color", "lightblue ");
+          } else {
+            $(p).css("background-color", "");
+          }
+        });
+      });
+    });
+  </script>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis
+      repellendus fugit voluptate nisi modi omnis unde. Facere explicabo error
+      laboriosam tempora. Iusto provident minus voluptatibus, alias atque
+      veritatis sequi.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad reprehenderit
+      modi eum, architecto hic quam perspiciatis aperiam minus dolores
+      voluptatem fugiat mollitia atque tempore vitae, quaerat accusantium enim
+      error qui!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ullam ea
+      officiis ex? Amet, placeat aliquam! Exercitationem veritatis aspernatur
+      saepe eum sed, dignissimos possimus unde dolore optio commodi iure natus!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium
+      suscipit expedita amet maxime nam, enim obcaecati odio eius ipsam in rerum
+      aspernatur unde quae inventore optio dolorum dignissimos voluptatum!
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, atque
+      error, aspernatur mollitia veniam esse ad accusamus culpa quis commodi
+      iure illum, accusantium quo. Vero magni similique eos corporis nisi!
+    </p>
+    <span></span>
+    <button id="clearActive">Clear Active</button>
+    <button id="checkActive">Check Active</button>
+    <button id="toggleActive">Toggle Active</button>
+    <button id="addCSS">Add CSS</button>
+  </body>
+</html>

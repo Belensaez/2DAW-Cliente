@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      div#container {
+        border: 3px solid black;
+        width: 600px;
+        height: 300px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        position: relative;
+      }
+      #container div {
+        float: left;
+        width: 200px;
+        height: 150px;
+        overflow: hidden; /* Oculta el contenido que se salga */
+      }
+      img {
+        width: 200%;
+        height: 200%;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $.each($("img"), function () {
+        $(this).mouseenter(function () {
+          $(this).animate({ height: "100%", width: "100%", opacity: "1" });
+        });
+        $(this).mouseleave(function () {
+          $(this).animate({ height: "200%", width: "200%", opacity: "0.5" });
+        });
+      });
+    });
+  </script>
+
+  <body>
+    <div id="container">
+      <div><img src="ciudad1.jpg" /></div>
+      <div><img src="ciudad2.jpg" /></div>
+      <div><img src="ciudad3.jpg" /></div>
+      <div><img src="ciudad4.jpg" /></div>
+      <div><img src="ciudad5.jpg" /></div>
+      <div><img src="ciudad6.jpg" /></div>
+    </div>
+  </body>
+</html>

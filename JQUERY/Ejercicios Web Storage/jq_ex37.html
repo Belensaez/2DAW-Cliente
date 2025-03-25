@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      div {
+        width: 500px;
+        padding: 10px;
+        margin: 40px auto;
+        border: 1px solid black;
+        background-color: antiquewhite;
+      }
+      img {
+        height: 100px;
+        margin: 6px 150px;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      if (localStorage.backgrounColor) {
+        $("body").css("background-color", localStorage.backgrounColor);
+      }
+      if (localStorage.fonts) {
+        $("div").css("font-family", localStorage.fonts);
+      }
+      if (localStorage.fonts) {
+        $("img").attr("src", localStorage.srcs);
+      }
+    });
+  </script>
+
+  <body>
+    <div>
+      <img src="../cookie.png" alt="cookie" />
+
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+        aspernatur voluptatibus explicabo quod, animi ut cupiditate iure dicta
+        corrupti nostrum. Possimus fugit quis nulla eligendi et corporis labore
+        veritatis eos.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+        aspernatur voluptatibus explicabo quod, animi ut cupiditate iure dicta
+        corrupti nostrum. Possimus fugit quis nulla eligendi et corporis labore
+        veritatis eos.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+        aspernatur voluptatibus explicabo quod, animi ut cupiditate iure dicta
+        corrupti nostrum. Possimus fugit quis nulla eligendi et corporis labore
+        veritatis eos.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+        aspernatur voluptatibus explicabo quod, animi ut cupiditate iure dicta
+        corrupti nostrum. Possimus fugit quis nulla eligendi et corporis labore
+        veritatis eos.
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+        aspernatur voluptatibus explicabo quod, animi ut cupiditate iure dicta
+        corrupti nostrum. Possimus fugit quis nulla eligendi et corporis labore
+        veritatis eos.
+      </p>
+    </div>
+  </body>
+</html>
