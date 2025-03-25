@@ -1,0 +1,72 @@
+/* Contenedor de las imágenes */
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Aumento el espacio entre las imágenes */
+  padding: 20px;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en pantallas más pequeñas */
+  justify-content: space-evenly;
+}
+
+/* Estilo de los enlaces que contienen las imágenes */
+.image-container a {
+  display: block;
+  width: 200px; /* Aumento el tamaño de las imágenes a 200px */
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Efecto hover de la imagen */
+.image-container a:hover {
+  transform: scale(1.1); /* Agranda la imagen */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Estilo de la imagen */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que la imagen ocupe todo el espacio sin distorsionarse */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil por defecto */
+  transition: transform 0.3s ease-in-out; /* Efecto de suavizado */
+}
+
+/* Efecto hover sobre la imagen */
+.image-container a:hover img {
+  transform: scale(1.05); /* Añade un pequeño efecto de zoom */
+}
+
+/* Estilo responsivo para pantallas más pequeñas */
+@media (max-width: 1024px) {
+  .image-container a {
+      width: 180px; /* Reducir el tamaño de las imágenes en pantallas medianas */
+      height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+      gap: 20px; /* Reducir el espacio entre las imágenes en pantallas más pequeñas */
+  }
+
+  .image-container a {
+      width: 150px; /* Reducir el tamaño de las imágenes en pantallas pequeñas */
+      height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+      gap: 15px; /* Reducir aún más el espacio en pantallas muy pequeñas */
+  }
+
+  .image-container a {
+      width: 130px; /* Ajuste en tamaño para pantallas muy pequeñas */
+      height: 130px;
+  }
+}
